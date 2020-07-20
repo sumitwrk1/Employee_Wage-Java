@@ -1,4 +1,4 @@
-public class EmployeeWage {
+public class EmpWage {
 
 
 
@@ -8,7 +8,11 @@ public class EmployeeWage {
 
 	public static final int empRatePerHrs = 20;
 
-	
+	public static final int totalWorkDays = 20;
+
+	public static final int maxWorkHrs = 100;
+
+
 
 	public static void main(String[] args) {
 
@@ -18,41 +22,85 @@ public class EmployeeWage {
 
 		int empWage=0;
 
+		int totalEmpWage=0;
+
+		int totalWorkingDays=0;
+
+		int totalWorkingHrs=0;
 
 
-		int empAttendance = (int)Math.floor(Math.random() *10)%3;
 
-	
+		while(totatotalWorkingDays<totalWorkDays &&  totalWorkingHrs<=maxWorkHrs) {
+
+			
+
+			int empAttendance = (int)Math.floor(Math.random() *10)%3;
+
+			empWorkHrs = getWorkHrs(empAttendance);
+
+			
+
+			if(empAttendance==1 || empAttendance==2){
+
+				
+
+				totalWorkingDays++;
+
+				totalWorkingHrs=totalWorkingHrs+empWorkHrs;
+
+				System.out.println("Days: "+totalWorkingDays+" Employee Hrs: "+empWorkHrs);
+
+
+
+			}
+
+		}
+
+		
+
+		totalEmpWape=totalWorkingHrs*empRatePerHrs;
+
+		System.out.println("Total Employe's Wage: "+totalEmpWage);
+
+	}
+
+
+
+	public static int getWorkHrs(int empAttendance) {
+
+
+
+		int empWorkHrs=0;
+
+		
 
 		switch(empAttendance){
 
-		
 
-		case isFullTime: 
 
-				empWorkHrs=8;
+                        case isFullTime:
 
-				break;
+                                        empWorkHrs=8;
 
-		case isPartTime:
+                                        break;
 
-				empWorkHrs=4;
+                        case isPartTimr:
 
-				break;
+                                        empWorkHrs=4;
 
-		default:
+                                        break;
 
-				empWorkHrs=0;
+                        default:
 
-		}	
+                                        empWorkHrs=0;
 
-		
+                        }
 
-			empWage=empWorkHrs * empRatePerHrs;
+		return empWorkHrs;
 
-			System.out.println("Employee Wage: "+empWage);
 
-		}
+
+	}
 
 
 
